@@ -1,2 +1,2 @@
-# 1muhammad-yunas.com
+# muhammad-yunas.com
 Muhammad Yunas's website
