@@ -1,0 +1,244 @@
+/* --- Global Variables & Theme Setup --- */
+:root {
+  --bg-dark: #070D1D;
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --gold: #D4AF37;
+  --gold-glow: rgba(212, 175, 55, 0.15);
+  --gold-hover: #E5C158;
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --text-white: #FFFFFF;
+  --text-muted: #94A3B8;
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --max-width: 1100px;
+}
+
+/* --- Base Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center;
+}
+
+/* --- Layout Containers --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Header & Navigation --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.brand-first {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+.brand-last {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--gold);
+  color: #070D1D;
+  padding: 0.875rem 2rem;
+  border: 1px solid var(--gold);
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-hover);
+  border-color: var(--gold-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--border-gold);
+  padding: 0.875rem 2rem;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding: 4rem 0 3.5rem;
+  text-align: center;
+}
+
+/* --- Status Pill --- */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold-glow);
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 0.45rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gold);
+  flex-shrink: 0;
+}
+
+/* --- Headshot Image --- */
+.hero-headshot {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+/* --- Typography --- */
+h1.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-white);
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 880px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.hero-pitch {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- CTA Button Group --- */
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+/* --- Section Placeholders & Footer --- */
+.section-placeholder {
+  padding: 5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Mobile Responsiveness Adjustments --- */
+@media (max-width: 600px) {
+  .hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .hero-headshot {
+    width: 140px;
+    height: 140px;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-group .btn {
+    width: 100%;
+  }
+}
