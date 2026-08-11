@@ -8,50 +8,57 @@
 </head>
 <body>
     <header>
-        <div class="nav-container">
-            <div class="logo">Muhammad <span>Yunas</span></div>
-            <a href="mailto:yunasmuh@gmail.com" class="btn btn-gold">LET'S TALK →</a>
+        <div class="navbar">
+            <a href="#" class="brand-logo">
+                <span class="brand-first">Muhammad</span>
+                <span class="brand-last">Yunas</span>
+            </a>
+            <a href="mailto:yunasmuh@gmail.com" class="btn btn-primary btn-sm">
+                LET'S TALK 
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section class="hero">
-            <div class="badge">
-                <span class="badge-dot"></span>
+            <div class="status-pill">
+                <span class="status-dot"></span>
                 AVAILABLE FOR EXECUTIVE GTM LEADERSHIP
             </div>
 
-            <div class="hero-headshot">
-                <img src="assets/portrait.png" alt="Muhammad Yunas Executive Portrait">
-            </div>
+            <img src="assets/portrait.png" alt="Muhammad Yunas Executive Portrait" class="hero-headshot">
 
             <h1 class="hero-title">The Executive Who Builds Go-to-Market for the Physical AI Era</h1>
             <p class="hero-subtitle">Bridging OT complexity and enterprise SaaS scale. 16+ years translating deep technical innovation into market category leadership.</p>
+            <p class="hero-pitch">Listen deeply. Clarify relentlessly. Execute decisively.</p>
 
-            <div class="hero-tagline">
-                Listen deeply. Clarify relentlessly. Execute decisively.
+            <div class="cta-group">
+                <a href="mailto:yunasmuh@gmail.com" class="btn btn-primary">
+                    Email Me Directly 
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/muhammad-yunas" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
             </div>
         </section>
 
-        <section id="contact" style="border-bottom: none;">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-                <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Ready for a Conversation?</h2>
-                <p style="color: var(--text-muted); font-size: 1.1rem;">I'm available for Senior Director, VP GTM, SVP Revenue, and CRO conversations at high-growth Physical AI, industrial autonomy, and Industrial IoT companies. If you're building the industrial AI infrastructure of the next decade — I want to talk.</p>
-                
-                <div class="cta-group" style="margin-top: 2rem; margin-bottom: 2rem;">
-                    <a href="mailto:yunasmuh@gmail.com" class="btn btn-gold">Email Me Directly →</a>
-                    <a href="https://www.linkedin.com/in/muhammad-yunas" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+        <section class="section-placeholder" id="contact">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem;">Ready for a Conversation?</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">I'm available for Senior Director, VP GTM, SVP Revenue, and CRO conversations at high-growth Physical AI, industrial autonomy, and Industrial IoT companies. If you're building the industrial AI infrastructure of the next decade — I want to talk.</p>
+                <div class="cta-group">
+                    <a href="mailto:yunasmuh@gmail.com" class="btn btn-primary">Email Me Directly →</a>
+                    <a href="https://www.linkedin.com/in/muhammad-yunas" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
                 </div>
-
-                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: var(--text-muted); font-size: 0.95rem;">
-                    <span>✉ yunasmuh@gmail.com</span>
-                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">✉ yunasmuh@gmail.com</p>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 Muhammad Yunas. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 Muhammad Yunas. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
