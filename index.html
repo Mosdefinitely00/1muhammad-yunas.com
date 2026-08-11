@@ -21,10 +21,11 @@
     --navy-mid: #0a1628;
     --gold: #D4AF37;
     --gold-light: #F3E5AB;
-    --gold-glow: rgba(212, 175, 55, 0.22);
+    --gold-pale: #F5E9C8;
+    --gold-glow: rgba(212, 175, 55, 0.25);
     --white: #ffffff;
     --text-muted: #94A3B8;
-    --border: rgba(212, 175, 55, 0.28);
+    --border: rgba(212, 175, 55, 0.35);
     --transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
   }
   
@@ -42,25 +43,25 @@
   ::-webkit-scrollbar-track { background: var(--bg-dark); }
   ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
-  /* TOP-LEFT NAVIGATION */
+  /* TOP NAVIGATION & BRANDING */
   nav {
     position: fixed; top: 3px; left: 0; right: 0; z-index: 1000;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 4%; height: 80px;
-    background: rgba(7, 13, 29, 0.90); backdrop-filter: blur(16px);
+    padding: 0 4%; height: 85px;
+    background: rgba(7, 13, 29, 0.92); backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border); transition: var(--transition);
   }
   nav.scrolled { background: rgba(7, 13, 29, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
   
-  .nav-left-cluster { display: flex; flex-direction: column; gap: 0.15rem; }
+  .nav-left-cluster { display: flex; flex-direction: column; gap: 0.2rem; }
   .nav-logo-name {
-    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em;
+    font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em;
     display: flex; align-items: center; gap: 0.5rem;
   }
   .nav-logo-name span { color: var(--gold); }
   .nav-sub-links { display: flex; gap: 1.2rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  .nav-sub-links a { color: var(--text-muted); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.3rem; }
-  .nav-sub-links a:hover { color: var(--gold); }
+  .nav-sub-links a { color: var(--gold-light); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.3rem; }
+  .nav-sub-links a:hover { color: var(--white); text-shadow: 0 0 10px var(--gold); }
 
   .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: var(--transition); }
@@ -72,28 +73,28 @@
   @media(max-width:960px) { .nav-links { display: none; } .hamburger { display: flex; } }
 
   /* CORE LAYOUT */
-  section { padding: 7rem 5%; position: relative; }
+  section { padding: 6rem 5%; position: relative; }
   .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.2; color: var(--white); margin-bottom: 1.5rem; }
   .section-title span { color: var(--gold); }
   .divider { width: 60px; height: 3px; background: var(--gold); margin-bottom: 2.5rem; }
   
-  /* READABLE HIGH-CONTRAST BUTTONS */
+  /* READABLE HIGH-CONTRAST GOLD BUTTONS */
   .btn-primary { 
-    background: var(--gold); color: #070D1D; font-weight: 700; padding: 0.9rem 2.2rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; letter-spacing: 0.04em; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.6rem; border: 1px solid var(--gold); cursor: pointer; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #070D1D; font-weight: 700; padding: 0.95rem 2.4rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; letter-spacing: 0.04em; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.6rem; border: 1px solid var(--gold); cursor: pointer; box-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
   }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4); }
+  .btn-primary:hover { background: var(--white); transform: translateY(-2px); box-shadow: 0 8px 35px rgba(212, 175, 55, 0.5); }
   
   .btn-secondary { 
-    background: rgba(255, 255, 255, 0.04); border: 1.5px solid var(--border); color: var(--white); font-weight: 600; padding: 0.9rem 2.2rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; letter-spacing: 0.04em; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.6rem; margin-left: 1rem; cursor: pointer; backdrop-filter: blur(8px);
+    background: rgba(212, 175, 55, 0.08); border: 1.5px solid var(--border); color: var(--white); font-weight: 600; padding: 0.95rem 2.4rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; letter-spacing: 0.04em; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.6rem; margin-left: 1rem; cursor: pointer; backdrop-filter: blur(8px);
   }
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); background: var(--gold-glow); }
 
-  /* HERO SECTION WITH PORTRAIT F-LAYOUT */
+  /* HERO SECTION (PROPER FLOW: PORTRAIT -> BADGE -> HEADLINE -> BUTTONS -> METRICS) */
   #hero {
     min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    background: radial-gradient(circle at 70% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%), linear-gradient(135deg, var(--bg-dark) 0%, #040812 100%);
-    position: relative; overflow: hidden; padding-top: 110px;
+    background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.12) 0%, transparent 65%), linear-gradient(135deg, var(--bg-dark) 0%, #040812 100%);
+    position: relative; overflow: hidden; padding-top: 120px; text-align: center;
   }
   .hero-grid-overlay {
     position: absolute; inset: 0; opacity: 0.12;
@@ -101,27 +102,27 @@
     background-size: 50px 50px; pointer-events: none;
   }
   
-  .hero-wrapper { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%; }
-  .hero-text { flex: 1; text-align: left; }
-  .hero-visual { flex: 0 0 340px; position: relative; display: flex; justify-content: center; }
+  .hero-wrapper { max-width: 1050px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; }
   
+  /* Portrait Frame */
+  .hero-visual { margin-bottom: 2rem; position: relative; }
   .hero-portrait {
-    width: 100%; max-width: 320px; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover;
-    border: 3px solid var(--gold); box-shadow: 0 0 50px rgba(212, 175, 55, 0.3); transition: var(--transition);
+    width: 220px; height: 220px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--gold); box-shadow: 0 0 50px rgba(212, 175, 55, 0.35); transition: var(--transition);
   }
-  .hero-portrait:hover { transform: scale(1.02); box-shadow: 0 0 70px rgba(212, 175, 55, 0.5); }
+  .hero-portrait:hover { transform: scale(1.03); box-shadow: 0 0 70px rgba(212, 175, 55, 0.55); }
 
   .status-pill { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--gold-glow); border: 1px solid var(--border); color: var(--gold); padding: 0.5rem 1.4rem; border-radius: 9999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2rem; backdrop-filter: blur(10px); }
   .status-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 12px var(--gold); animation: pulse 2s infinite; }
   @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
 
-  .hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; color: var(--white); letter-spacing: -0.02em; }
-  .hero-sub { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; max-width: 700px; }
+  .hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; color: var(--white); letter-spacing: -0.02em; }
+  .hero-sub { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; max-width: 800px; }
   .hero-sub strong { color: var(--white); font-weight: 600; }
   
-  .metric-bar { display: flex; justify-content: space-around; gap: 2rem; margin-top: 4.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; background: rgba(15, 28, 63, 0.3); border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid var(--border); width: 100%; grid-column: span 2; }
-  .metric-item { text-align: center; padding: 0 1rem; }
-  .metric-number { display: block; font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  .metric-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; background: rgba(15, 28, 63, 0.4); border-radius: 16px; backdrop-filter: blur(12px); border: 1px solid var(--border); width: 100%; }
+  .metric-item { text-align: center; padding: 0 0.5rem; }
+  .metric-number { display: block; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
   .metric-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
 
   /* MANIFESTO / PHYSICAL AI HIGHLIGHT */
@@ -194,20 +195,20 @@
   .reveal.active { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 960px) {
-    .hero-wrapper { flex-direction: column-reverse; text-align: center; gap: 2.5rem; }
-    .hero-text { text-align: center; }
-    .hero-visual { flex: 0 0 240px; }
-    .strategy-container, .contact-wrapper, .chart-grid, .manifesto-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-wrapper, .chart-grid, .manifesto-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; width: 100%; text-align: center; }
     .btn-primary { display: block; width: 100%; text-align: center; }
-    .metric-bar { flex-direction: column; gap: 1.5rem; padding: 2rem 1rem; }
+    .metric-bar { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem 1rem; }
     .resume-cta-banner { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 540px) {
+    .metric-bar { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP-LEFT NAVIGATION -->
+<!-- TOP NAVIGATION & BRANDING CLUSTER -->
 <nav id="navbar">
     <div class="nav-left-cluster">
         <a href="#hero" class="nav-logo-name">
@@ -225,37 +226,37 @@
         <li><a href="#telemetry">Telemetry</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
     </div>
 </nav>
 
-<!-- HERO SECTION WITH PORTRAIT -->
+<!-- HERO SECTION (PROPER ORDER: PORTRAIT -> STATUS -> HEADLINE -> SUB -> BUTTONS -> METRICS) -->
 <section id="hero">
     <div class="hero-grid-overlay"></div>
     <div class="hero-wrapper reveal">
-        <div class="hero-text">
-            <div class="status-pill">
-                <span class="status-dot"></span>
-                LONG ISLAND, NEW YORK &nbsp;|&nbsp; EXECUTIVE GTM LEADERSHIP
-            </div>
-            <h1 class="hero-headline">The Executive Who Builds Go-to-Market for the Physical AI Era</h1>
-            <p class="hero-sub">Bridging OT complexity and enterprise SaaS scale. <strong>18+ years</strong> translating deep technical innovation, edge intelligence, and NVIDIA-ecosystem architectures into market category leadership.<br><br><em>"Listen deeply. Clarify relentlessly. Execute decisively."</em></p>
-            
-            <div>
-                <a href="#contact" class="btn-primary">Connect with Me →</a>
-                <a href="Muhammad_Yunas_Resume_2026.pdf" download class="btn-secondary"><i class="fa-solid fa-download"></i> Download Resume (.PDF)</a>
-            </div>
-        </div>
         
         <div class="hero-visual">
             <img src="assets/portrait.png" alt="Muhammad A. Yunas Executive Portrait" class="hero-portrait">
         </div>
 
+        <div class="status-pill">
+            <span class="status-dot"></span>
+            LONG ISLAND, NEW YORK &nbsp;|&nbsp; EXECUTIVE GTM LEADERSHIP
+        </div>
+        
+        <h1 class="hero-headline">The Executive Who Builds Go-to-Market for the Physical AI Era</h1>
+        <p class="hero-sub">Bridging OT complexity and enterprise SaaS scale. <strong>18+ years</strong> translating deep technical innovation, edge intelligence, and NVIDIA-ecosystem architectures into market category leadership[cite: 5, 8, 13].<br><br><em>"Listen deeply. Clarify relentlessly. Execute decisively."</em>[cite: 5, 13]</p>
+        
+        <div style="margin-bottom: 2rem;">
+            <a href="#contact" class="btn-primary">Connect with Me →</a>
+            <a href="Muhammad_Yunas_Resume_2026.pdf" download class="btn-secondary"><i class="fa-solid fa-download"></i> Download Resume (.PDF)</a>
+        </div>
+
         <div class="metric-bar">
             <div class="metric-item">
                 <span class="metric-number">$150M+</span>
-                <span class="metric-label">Revenue Influenced[span_4](start_span)[span_4](end_span)</span>
+                <span class="metric-label">Revenue Influenced[cite: 13]</span>
             </div>
             <div class="metric-item">
                 <span class="metric-number">24+</span>
@@ -263,11 +264,11 @@
             </div>
             <div class="metric-item">
                 <span class="metric-number">42%</span>
-                <span class="metric-label">Win-Rate Lift[span_5](start_span)[span_5](end_span)</span>
+                <span class="metric-label">Win-Rate Lift[cite: 13]</span>
             </div>
             <div class="metric-item">
                 <span class="metric-number">38%</span>
-                <span class="metric-label">Market Share (18 Mo)[span_6](start_span)[span_6](end_span)</span>
+                <span class="metric-label">Market Share (18 Mo)[cite: 13]</span>
             </div>
         </div>
     </div>
@@ -281,10 +282,10 @@
             <h2 class="section-title">Silicon Meets Steel: <span>The Industrial Autonomy Imperative.</span></h2>
             <div class="divider"></div>
             <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                The generative AI hype cycle is maturing, but the true economic engine of the next decade lives at the edge. To generate real, sustainable revenue, AI must leave the browser tab and enter the physical world[span_7](start_span)[span_7](end_span).
+                The generative AI hype cycle is maturing, but the true economic engine of the next decade lives at the edge. To generate real, sustainable revenue, AI must leave the browser tab and enter the physical world[cite: 11].
             </p>
             <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                Most tech startups fail in industrial markets because they sell features to buyers who buy uptime. I bridge the operational technology (OT) divide between plant floor reality and CFO-aligned enterprise value[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span).
+                Most tech startups fail in industrial markets because they sell features to buyers who buy uptime. I bridge the operational technology (OT) divide between plant floor reality and CFO-aligned enterprise value[cite: 5, 11].
             </p>
         </div>
         <div>
@@ -292,7 +293,7 @@
                 <p>
                     "You cannot just drop an LLM into a heavy manufacturing plant and expect ROI. The physics of the real world demand high precision, zero latency, and absolute cyber-physical security."
                 </p>
-                <div class="manifesto-author">— From <em>Silicon Meets Steel</em> by Muhammad A. Yunas[span_10](start_span)[span_10](end_span)</div>
+                <div class="manifesto-author">— From <em>Silicon Meets Steel</em> by Muhammad A. Yunas[cite: 11]</div>
             </div>
         </div>
     </div>
@@ -308,32 +309,32 @@
             <div class="pillar-card">
                 <i class="fa-solid fa-microchip pillar-icon"></i>
                 <h3>Physical AI Architecture</h3>
-                <p>Building end-to-end go-to-market strategies for Physical AI platforms — ICP definition, category narrative, sales motion design, and revenue architecture from zero to scale[span_11](start_span)[span_11](end_span).</p>
+                <p>Building end-to-end go-to-market strategies for Physical AI platforms — ICP definition, category narrative, sales motion design, and revenue architecture from zero to scale[cite: 13].</p>
             </div>
             <div class="pillar-card">
                 <i class="fa-solid fa-network-wired pillar-icon"></i>
                 <h3>OT/IT Convergence Strategy</h3>
-                <p>Bridging the historic divide between Operational Technology and Information Technology — building narratives that resonate with plant-floor OT buyers and enterprise IT decision-makers[span_12](start_span)[span_12](end_span).</p>
+                <p>Bridging the historic divide between Operational Technology and Information Technology — building narratives that resonate with plant-floor OT buyers and enterprise IT decision-makers[cite: 13].</p>
             </div>
             <div class="pillar-card">
                 <i class="fa-solid fa-robot pillar-icon"></i>
                 <h3>Agentic AI Commercialization</h3>
-                <p>Translating capabilities like autonomous inspection, edge intelligence, and predictive operations into ROI frameworks that drive industrial buying decisions[span_13](start_span)[span_13](end_span).</p>
+                <p>Translating capabilities like autonomous inspection, edge intelligence, and predictive operations into ROI frameworks that drive industrial buying decisions[cite: 13].</p>
             </div>
             <div class="pillar-card">
                 <i class="fa-solid fa-chart-line pillar-icon"></i>
                 <h3>IIoT Revenue Architecture</h3>
-                <p>Designing and executing IIoT revenue programs across manufacturing, energy, and oil & gas — from first POC through full platform deployment and partner-sourced pipeline[span_14](start_span)[span_14](end_span).</p>
+                <p>Designing and executing IIoT revenue programs across manufacturing, energy, and oil & gas — from first POC through full platform deployment and partner-sourced pipeline[cite: 13].</p>
             </div>
             <div class="pillar-card">
                 <i class="fa-solid fa-shield-halved pillar-icon"></i>
                 <h3>Cyber-Physical Resilience</h3>
-                <p>Elevating OT security into board-level conversations — creating the 'cyber-physical resilience' narrative that unlocks CISO access, increases deal size, and differentiates from pure analytics[span_15](start_span)[span_15](end_span).</p>
+                <p>Elevating OT security into board-level conversations — creating the 'cyber-physical resilience' narrative that unlocks CISO access, increases deal size, and differentiates from pure analytics[cite: 13].</p>
             </div>
             <div class="pillar-card">
                 <i class="fa-solid fa-bullseye pillar-icon"></i>
                 <h3>Category Creation &amp; Ecosystems</h3>
-                <p>Establishing new Physical AI categories through narrative architecture, partner ecosystem development (SIs, OEMs, hyperscaler co-sell), and industry analyst engagement[span_16](start_span)[span_16](end_span).</p>
+                <p>Establishing new Physical AI categories through narrative architecture, partner ecosystem development (SIs, OEMs, hyperscaler co-sell), and industry analyst engagement[cite: 13].</p>
             </div>
         </div>
     </div>
@@ -345,7 +346,7 @@
         <span class="section-label">Performance Data</span>
         <h2 class="section-title">Commercial <span>Telemetry &amp; Impact.</span></h2>
         <div class="divider"></div>
-        <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Visualizing direct pipeline influence and deal velocity improvements achieved across enterprise portfolios through CFO-aligned narrative strategies.</p>
+        <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Visualizing direct pipeline influence and deal velocity improvements achieved across enterprise portfolios through CFO-aligned narrative strategies[cite: 5, 13].</p>
         
         <div class="chart-grid">
             <div class="chart-box">
@@ -375,51 +376,51 @@
             <div class="timeline-item">
                 <span class="timeline-date">July 2024 – Present</span>
                 <h3 class="timeline-role">Senior Director of Product Marketing – Interim &amp; Fractional</h3>
-                <p class="timeline-company">Independent Executive Advisory | New York, NY[span_17](start_span)[span_17](end_span)</p>
+                <p class="timeline-company">Independent Executive Advisory | New York, NY[cite: 13]</p>
                 <ul class="timeline-bullets">
-                    <li>Retained as Physical AI and Industrial IoT GTM counsel for enterprise B2B organizations commercializing AI systems that sense, operate in, and act on the physical world[span_18](start_span)[span_18](end_span).</li>
-                    <li>Architecting GTM frameworks for AI platforms at the OT/IT convergence layer (edge intelligence, connected asset operations, cyber-physical security)[span_19](start_span)[span_19](end_span).</li>
-                    <li>Shaping Physical AI category narratives through publications (PMA), panels, and executive advisory across industrial IoT and smart grid sectors[span_20](start_span)[span_20](end_span).</li>
+                    <li>Retained as Physical AI and Industrial IoT GTM counsel for enterprise B2B organizations commercializing AI systems that sense, operate in, and act on the physical world[cite: 13].</li>
+                    <li>Architecting GTM frameworks for AI platforms at the OT/IT convergence layer (edge intelligence, connected asset operations, cyber-physical security)[cite: 13].</li>
+                    <li>Shaping Physical AI category narratives through publications (PMA), panels, and executive advisory across industrial IoT and smart grid sectors[cite: 13].</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <span class="timeline-date">Dec 2022 – June 2024</span>
                 <h3 class="timeline-role">Senior Director of Product Marketing – UST</h3>
-                <p class="timeline-company">Professional Engineering Services | Aliso Viejo, CA[span_21](start_span)[span_21](end_span)</p>
+                <p class="timeline-company">Professional Engineering Services | Aliso Viejo, CA[cite: 13]</p>
                 <ul class="timeline-bullets">
-                    <li>Drove <strong>$9M in new revenue (30% YoY growth)</strong> and the largest regional marketing pipeline in company history by repositioning as Physical Operations Intelligence[span_22](start_span)[span_22](end_span).</li>
-                    <li>Expanded customer engagement 75% and secured executive sponsorship for $10M untapped market opportunity (34% incremental revenue)[span_23](start_span)[span_23](end_span).</li>
-                    <li>Reduced CAC 15% and tripled conversion rates via redesigned buyer journeys across manufacturing and supply chain verticals[span_24](start_span)[span_24](end_span).</li>
+                    <li>Drove <strong>$9M in new revenue (30% YoY growth)</strong> and the largest regional marketing pipeline in company history by repositioning as Physical Operations Intelligence[cite: 13].</li>
+                    <li>Expanded customer engagement 75% and secured executive sponsorship for $10M untapped market opportunity (34% incremental revenue)[cite: 13].</li>
+                    <li>Reduced CAC 15% and tripled conversion rates via redesigned buyer journeys across manufacturing and supply chain verticals[cite: 13].</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <span class="timeline-date">Dec 2021 – Oct 2022</span>
                 <h3 class="timeline-role">VP, Product Marketing (Process &amp; Manufacturing) – Uptake</h3>
-                <p class="timeline-company">Industrial AI Platform | Chicago, IL[span_25](start_span)[span_25](end_span)</p>
+                <p class="timeline-company">Industrial AI Platform | Chicago, IL[cite: 13]</p>
                 <ul class="timeline-bullets">
-                    <li>Commercialized OT/IT convergence narrative for predictive maintenance and asset performance management (APM) serving Caterpillar and BHE Renewables[span_26](start_span)[span_26](end_span).</li>
-                    <li>Unifying messaging across Sales, CS, and Product — reducing sales cycle times 40% and increasing target account engagement 25%[span_27](start_span)[span_27](end_span).</li>
+                    <li>Commercialized OT/IT convergence narrative for predictive maintenance and asset performance management (APM) serving Caterpillar and BHE Renewables[cite: 13].</li>
+                    <li>Unifying messaging across Sales, CS, and Product — reducing sales cycle times 40% and increasing target account engagement 25%[cite: 13].</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <span class="timeline-date">July 2018 – Nov 2021</span>
                 <h3 class="timeline-role">Senior Director, PMM Cyber Recovery &amp; Data Protection</h3>
-                <p class="timeline-company">Dell Technologies | Boston, MA[span_28](start_span)[span_28](end_span)</p>
+                <p class="timeline-company">Dell Technologies | Boston, MA[cite: 13]</p>
                 <ul class="timeline-bullets">
-                    <li>Repositioned $500M+ cybersecurity portfolio as cyber-physical resilience connecting data protection to operational uptime[span_29](start_span)[span_29](end_span).</li>
-                    <li>Increased competitive win rate 42% and grew market share 37% across Fortune 500 and industrial accounts[span_30](start_span)[span_30](end_span).</li>
+                    <li>Repositioned $500M+ cybersecurity portfolio as cyber-physical resilience connecting data protection to operational uptime[cite: 13].</li>
+                    <li>Increased competitive win rate 42% and grew market share 37% across Fortune 500 and industrial accounts[cite: 13].</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <span class="timeline-date">Jan 2012 – Dec 2015</span>
                 <h3 class="timeline-role">Senior Director, PMM Intelligent Physical Operations</h3>
-                <p class="timeline-company">Schneider Electric | Boston, MA[span_31](start_span)[span_31](end_span)</p>
+                <p class="timeline-company">Schneider Electric | Boston, MA[cite: 13]</p>
                 <ul class="timeline-bullets">
-                    <li>Spearheaded early IIoT platform launch scaling from launch to <strong>$75M+ cumulative revenue</strong> in 18 months with 38% market share[span_32](start_span)[span_32](end_span).</li>
+                    <li>Spearheaded early IIoT platform launch scaling from launch to <strong>$75M+ cumulative revenue</strong> in 18 months with 38% market share[cite: 13].</li>
                 </ul>
             </div>
         </div>
@@ -437,9 +438,9 @@
         
         <div class="mt-8 border-t border-border pt-8" style="margin-top: 3rem;">
             <h4 class="text-white font-bold mb-3 font-['Playfair_Display'] text-xl">Education &amp; Credentials</h4>
-            <p class="text-text-muted mb-2" style="color: var(--text-muted);"><strong>Seton Hall University:</strong> M.A., Diplomacy &amp; Int. Relations; M.A., Corporate Communications[span_33](start_span)[span_33](end_span)</p>
-            <p class="text-text-muted mb-3" style="color: var(--text-muted);"><strong>University of Rhode Island:</strong> B.A., Int. Business &amp; Political Science[span_34](start_span)[span_34](end_span)</p>
-            <p style="color: var(--gold); font-size: 0.95rem; font-weight: 600;">Certified PMM (PMA) &nbsp;|&nbsp; Cloud AI Pro (Oracle) &nbsp;|&nbsp; Ethics in GenAI (Google)[span_35](start_span)[span_35](end_span)</p>
+            <p class="text-text-muted mb-2" style="color: var(--text-muted);"><strong>Seton Hall University:</strong> M.A., Diplomacy &amp; Int. Relations; M.A., Corporate Communications[cite: 13]</p>
+            <p class="text-text-muted mb-3" style="color: var(--text-muted);"><strong>University of Rhode Island:</strong> B.A., Int. Business &amp; Political Science[cite: 13]</p>
+            <p style="color: var(--gold); font-size: 0.95rem; font-weight: 600;">Certified PMM (PMA) &nbsp;|&nbsp; Cloud AI Pro (Oracle) &nbsp;|&nbsp; Ethics in GenAI (Google)[cite: 13]</p>
         </div>
     </div>
 </section>
@@ -471,7 +472,7 @@
 </section>
 
 <footer>
-    <p>&copy; <span id="year">2026</span> <span>Muhammad A. Yunas</span>. All rights reserved. | Physical AI &amp; Industrial GTM Leadership</p>
+    <p>&copy; <span id="year">2026</span> <span>Muhammad A. Yunas</span>. All rights reserved. | Physical AI &amp; Industrial GTM Leadership[cite: 10, 13]</p>
 </footer>
 
 <script>
