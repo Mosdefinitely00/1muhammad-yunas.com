@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Yunas | Executive GTM Leadership</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Reconstructed Layout Styles for Core Sections */
+        .content-section { padding: 4rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .section-header { font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-white); margin-bottom: 2.5rem; text-align: center; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .expertise-card { background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); transition: border-color 0.3s ease; }
+        .expertise-card:hover { border-color: var(--border-gold); }
+        .expertise-card h3 { color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; }
+        .expertise-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+        
+        .verticals-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        .vertical-tag { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(212, 175, 55, 0.3); padding: 0.6rem 1.25rem; border-radius: 4px; font-size: 0.95rem; color: var(--text-white); font-weight: bold; }
+        
+        .timeline { max-width: 850px; margin: 0 auto; }
+        .timeline-item { border-left: 2px solid rgba(212, 175, 55, 0.3); padding-left: 2rem; margin-bottom: 3.5rem; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: var(--bg-dark); border: 2px solid var(--gold); border-radius: 50%; }
+        .timeline-date { color: var(--gold); font-size: 0.85rem; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block; text-transform: uppercase; }
+        .timeline-role { font-size: 1.35rem; color: var(--text-white); margin-bottom: 0.25rem; font-weight: bold; }
+        .timeline-company { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; }
+        .timeline-bullets { color: var(--text-muted); font-size: 0.95rem; margin-left: 1.2rem; line-height: 1.7; }
+        .timeline-bullets li { margin-bottom: 0.75rem; }
+        
+        .education-text { text-align: center; color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+    </style>
 </head>
 <body>
     <header>
@@ -21,16 +46,18 @@
     </header>
 
     <main class="container">
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="status-pill">
                 <span class="status-dot"></span>
                 AVAILABLE FOR EXECUTIVE GTM LEADERSHIP
             </div>
 
+            <!-- Ensure this file name matches the exact photo you want -->
             <img src="assets/portrait.png" alt="Muhammad Yunas Executive Portrait" class="hero-headshot">
 
             <h1 class="hero-title">The Executive Who Builds Go-to-Market for the Physical AI Era</h1>
-            <p class="hero-subtitle">Bridging OT complexity and enterprise SaaS scale. 16+ years translating deep technical innovation into market category leadership.</p>
+            <p class="hero-subtitle">Bridging OT complexity and enterprise SaaS scale. 18 years translating deep technical innovation into market category leadership.</p>
             <p class="hero-pitch">Listen deeply. Clarify relentlessly. Execute decisively.</p>
 
             <div class="cta-group">
@@ -42,9 +69,109 @@
             </div>
         </section>
 
-        <section class="section-placeholder" id="contact">
+        <!-- CORE EXPERTISE SECTION -->
+        <section class="content-section">
+            <h2 class="section-header">Six Pillars of Industrial GTM Leadership</h2>
+            <div class="grid-container">
+                <div class="expertise-card">
+                    <h3>Physical AI GTM Architecture</h3>
+                    <p>Building end-to-end go-to-market strategies for Physical AI platforms — ICP definition, category narrative, sales motion design, and revenue architecture from zero to scale in industrial markets.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>OT/IT Convergence Strategy</h3>
+                    <p>Bridging the historic divide between Operational Technology and Information Technology — building narratives and commercial motions that resonate with both plant floor OT buyers and enterprise IT decision-makers.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Agentic AI Commercialization</h3>
+                    <p>Translating Agentic AI capabilities — autonomous inspection, predictive operations, real-time process optimization — into ROI frameworks and commercial narratives that drive enterprise industrial buying decisions.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Industrial IoT Revenue Architecture</h3>
+                    <p>Designing and executing IIoT revenue programs across manufacturing, energy, and oil & gas — from first POC through full platform deployment and partner-sourced pipeline expansion.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Cyber-Physical Resilience Positioning</h3>
+                    <p>Elevating OT security and AI reliability into board-level conversations — creating the 'cyber-physical resilience' narrative that unlocks CISO access, increases deal size, and differentiates from pure analytics vendors.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Category Creation & Partner Ecosystems</h3>
+                    <p>Establishing new Physical AI and Industrial IoT categories through narrative architecture, partner ecosystem development (SIs, OEMs, hyperscaler co-sell), and industry analyst engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARGET VERTICALS SECTION -->
+        <section class="content-section" style="border-top: none; padding-top: 0;">
+            <h2 class="section-header" style="font-size: 1.8rem;">Target Verticals</h2>
+            <div class="verticals-container">
+                <span class="vertical-tag">Discrete Manufacturing</span>
+                <span class="vertical-tag">Energy & Power Gen</span>
+                <span class="vertical-tag">Oil & Gas (Upstream)</span>
+                <span class="vertical-tag">Automotive Tier 1</span>
+                <span class="vertical-tag">Smart Factory Automation</span>
+                <span class="vertical-tag">Logistics & Supply Chain</span>
+            </div>
+        </section>
+
+        <!-- WORK & IMPACT SECTION -->
+        <section class="content-section">
+            <h2 class="section-header">Career Milestones & Leadership Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">July 2024 – Present</span>
+                    <h3 class="timeline-role">Senior Director of Product Marketing – Interim & Fractional Counsel</h3>
+                    <p class="timeline-company">Independent Executive Advisory | New York, NY</p>
+                    <p style="color: var(--text-white); font-size: 0.95rem; margin-bottom: 1rem;">Retained as Physical AI and Industrial IoT GTM counsel for enterprise B2B organizations commercializing AI systems that sense, operate in, and act on the physical world.</p>
+                    <ul class="timeline-bullets">
+                        <li>Architecting GTM frameworks for AI platforms at the OT/IT convergence layer (edge intelligence, connected asset operations, cyber-physical security).</li>
+                        <li>Leading full-lifecycle product marketing transformations to accelerate time-to-revenue for complex industrial AI and IIoT portfolios.</li>
+                        <li>Shaping Physical AI category narratives through publications (PMA), panels, and executive advisory across industrial IoT and smart grid sectors.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">Dec 2022 – June 2024</span>
+                    <h3 class="timeline-role">Senior Director of Product Marketing – UST</h3>
+                    <p class="timeline-company">Professional Engineering Services | Aliso Viejo, CA</p>
+                    <p style="color: var(--text-white); font-size: 0.95rem; margin-bottom: 1rem;">Led product marketing for professional engineering services portfolio (team of 4 PMMs, $2M+ annual marketing budget, North America & EMEA).</p>
+                    <ul class="timeline-bullets">
+                        <li>Drove $9M in new revenue (30% YoY growth) and the largest regional marketing pipeline in company history by repositioning as Physical Operations Intelligence.</li>
+                        <li>Expanded customer engagement 75% and secured executive sponsorship for $10M untapped market opportunity (34% incremental revenue).</li>
+                        <li>Reduced CAC 15% and tripled conversion rates via redesigned buyer journeys across manufacturing and supply chain verticals.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">Dec 2021 – Oct 2022</span>
+                    <h3 class="timeline-role">VP, Product Marketing (Process & Manufacturing) – Uptake Technologies</h3>
+                    <p class="timeline-company">Industrial AI Platform | Chicago, IL</p>
+                    <p style="color: var(--text-white); font-size: 0.95rem; margin-bottom: 1rem;">Led GTM for $50M+ industrial AI platform serving heavy manufacturing, energy, and process industries across three geographies (Caterpillar, BHE Renewables).</p>
+                    <ul class="timeline-bullets">
+                        <li>Commercialized OT/IT convergence narrative for predictive maintenance and asset performance management (APM).</li>
+                        <li>Unifying messaging across Sales, CS, and Product — reducing sales cycle times 40% and increasing target account engagement 25%.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section class="content-section">
+            <h2 class="section-header">Education & Credentials</h2>
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem;">Ready for a Conversation?</h2>
+                <p class="education-text"><strong>Seton Hall University:</strong> M.A., Diplomacy & Int. Relations; M.A., Corporate Communications</p>
+                <p class="education-text"><strong>University of Rhode Island:</strong> B.A., Int. Business & Political Science</p>
+                <p class="education-text" style="margin-top: 1rem; color: var(--gold);">
+                    Certified PMM (PMA) &nbsp;|&nbsp; Cloud AI Pro (Oracle) &nbsp;|&nbsp; Ethics in GenAI (Google)
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="content-section" id="contact" style="border-bottom: none;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-white);">Ready for a Conversation?</h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">I'm available for Senior Director, VP GTM, SVP Revenue, and CRO conversations at high-growth Physical AI, industrial autonomy, and Industrial IoT companies. If you're building the industrial AI infrastructure of the next decade — I want to talk.</p>
                 <div class="cta-group">
                     <a href="mailto:yunasmuh@gmail.com" class="btn btn-primary">Email Me Directly →</a>
