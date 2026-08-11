@@ -114,6 +114,14 @@
   
   .hero-wrapper { max-width: 1050px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; }
 
+  /* Portrait Frame */
+  .hero-visual { margin-bottom: 2rem; position: relative; }
+  .hero-portrait {
+    width: 220px; height: 220px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--gold); box-shadow: 0 0 50px rgba(212, 175, 55, 0.35); transition: var(--transition);
+  }
+  .hero-portrait:hover { transform: scale(1.03); box-shadow: 0 0 70px rgba(212, 175, 55, 0.55); }
+
   .status-pill { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--gold-glow); border: 1px solid var(--border); color: var(--gold); padding: 0.5rem 1.4rem; border-radius: 9999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2rem; backdrop-filter: blur(10px); }
   .status-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 12px var(--gold); animation: pulse 2s infinite; }
   @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
@@ -122,11 +130,7 @@
   .hero-sub { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; max-width: 800px; }
   .hero-sub strong { color: var(--white); font-weight: 600; }
   
-  .hero-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; max-width: 900px; margin-bottom: 3rem; }
-  .hero-tag { background: rgba(255,193,7,0.06); border: 1px solid var(--border); color: var(--white); font-size: 0.82rem; font-weight: 700; padding: 0.5rem 1.2rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.06em; transition: var(--transition); }
-  .hero-tag:hover { background: var(--gold); color: #070D1D; border-color: var(--gold); }
-
-  .metric-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2.5rem; background: rgba(15, 28, 63, 0.4); border-radius: 16px; backdrop-filter: blur(12px); border: 1px solid var(--border); width: 100%; }
+  .metric-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2.5rem; background: rgba(15, 28, 63, 0.4); border-radius: 16px; backdrop-filter: blur(12px); border: 1px solid var(--border); width: 100%; }
   .metric-item { text-align: center; padding: 0 0.5rem; }
   .metric-number { display: block; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
   .metric-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
@@ -139,7 +143,7 @@
   .manifesto-quote p { font-style: italic; color: var(--white); font-size: 1.15rem; line-height: 1.7; margin-bottom: 1.5rem; }
   .manifesto-author { color: var(--gold); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; }
 
-  /* PILLARS (3x3 / 3-Column Uniform Grid) */
+  /* PILLARS (3-Column Uniform Grid) */
   #pillars { background: var(--bg-dark); }
   .pillars-container { max-width: 1200px; margin: 0 auto; }
   .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
@@ -148,7 +152,7 @@
   .pillar-card:hover::before { transform: scaleX(1); }
   .pillar-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
   .pillar-icon { font-size: 2.2rem; color: var(--gold); margin-bottom: 1.5rem; }
-  .pillar-card h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--white); font-weight: 700; }
+  .pillar-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--white); font-weight: 700; }
   .pillar-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; text-align: justify; flex-grow: 1; }
 
   /* TELEMETRY */
@@ -193,13 +197,18 @@
 
   @media (max-width: 960px) {
     .contact-wrapper, .chart-grid, .manifesto-grid, .pillars-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; width: 100%; text-align: center; }
+    .btn-primary { display: block; width: 100%; text-align: center; }
     .metric-bar { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem 1rem; }
+  }
+  @media (max-width: 540px) {
+    .metric-bar { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP-LEFT NAVIGATION & BRANDING CLUSTER -->
+<!-- TOP NAVIGATION & BRANDING CLUSTER -->
 <nav id="navbar">
     <div class="nav-left-cluster">
         <a href="#hero" class="nav-logo-name">
@@ -208,7 +217,7 @@
         <div class="nav-sub-links">
             <a href="https://www.linkedin.com/in/muhammad-yunas" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="mailto:yunasmuh@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a href="Muhammad_Yunas_Resume_2026.pdf" download><i class="fa-solid fa-file-pdf"></i> Resume</a>
+            <a href="Muhammad_Yunas_Resume_2026.pdf" download><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
         </div>
     </div>
     <ul class="nav-links">
@@ -228,13 +237,22 @@
     <div class="hero-grid-overlay"></div>
     <div class="hero-wrapper reveal">
         
+        <div class="hero-visual">
+            <img src="assets/portrait.png" alt="Muhammad A. Yunas Executive Portrait" class="hero-portrait" loading="lazy">
+        </div>
+
         <div class="status-pill">
             <span class="status-dot"></span>
             LONG ISLAND, NEW YORK &nbsp;|&nbsp; EXECUTIVE GTM LEADERSHIP
         </div>
         
         <h1 class="hero-headline">The Executive Who Builds Go-to-Market for the Physical AI Era</h1>
-        <p class="hero-sub">Bridging OT complexity and enterprise SaaS scale. <strong>18+ years</strong> translating deep technical innovation, edge intelligence, and NVIDIA-ecosystem architectures into market category leadership[cite: 5, 8].<br><br><em>"Listen deeply. Clarify relentlessly. Execute decisively."</em>[cite: 5]</p>
+        <p class="hero-sub">Bridging OT complexity and enterprise SaaS scale. <strong>18+ years</strong> translating deep technical innovation, edge intelligence, and NVIDIA-ecosystem architectures into market category leadership.<br><br><em>"Listen deeply. Clarify relentlessly. Execute decisively."</em></p>
+        
+        <div style="margin-bottom: 2rem;">
+            <a href="#contact" class="btn-primary">Connect with Me →</a>
+            <a href="Muhammad_Yunas_Resume_2026.pdf" download class="btn-secondary"><i class="fa-solid fa-download"></i> Download Resume (.PDF)</a>
+        </div>
 
         <div class="metric-bar">
             <div class="metric-item">
@@ -268,7 +286,7 @@
                 The generative AI hype cycle is maturing, but the true economic engine of the next decade lives at the edge. To generate real, sustainable revenue, AI must leave the browser tab and enter the physical world.
             </p>
             <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                Most tech startups fail in industrial markets because they sell features to buyers who buy uptime. I bridge the operational technology (OT) divide between plant floor reality and CFO-aligned enterprise value[cite: 5].
+                Most tech startups fail in industrial markets because they sell features to buyers who buy uptime. I bridge the operational technology (OT) divide between plant floor reality and CFO-aligned enterprise value.
             </p>
         </div>
         <div>
@@ -329,7 +347,7 @@
         <span class="section-label">Performance Data</span>
         <h2 class="section-title">Commercial <span>Telemetry &amp; Impact.</span></h2>
         <div class="divider"></div>
-        <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Visualizing direct pipeline influence and deal velocity improvements achieved across enterprise portfolios through CFO-aligned narrative strategies[cite: 5].</p>
+        <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Visualizing direct pipeline influence and deal velocity improvements achieved across enterprise portfolios through CFO-aligned narrative strategies.</p>
         
         <div class="chart-grid">
             <div class="chart-box">
@@ -408,35 +426,22 @@
             </div>
         </div>
 
-        <!-- Centered Download Resume Button at Bottom of Timeline -->
-        <div style="margin-top: 3.5rem; text-align: center;">
-            <a href="Muhammad_Yunas_Resume_2026.pdf" download class="btn-secondary" style="padding: 0.85rem 2.5rem; font-size: 0.95rem;">
-                <i class="fa-solid fa-download"></i> Download Resume (.PDF)
+        <!-- RESUME DOWNLOAD BANNER -->
+        <div class="resume-cta-banner">
+            <div>
+                <h4>Access Complete Executive Credential Suite</h4>
+                <p>Download the official 2026 Resume and Candidate Onboarding Playbook.</p>
+            </div>
+            <a href="Muhammad_Yunas_Resume_2026.pdf" download class="btn-primary" style="padding: 0.8rem 1.8rem; font-size: 0.9rem;">
+                <i class="fa-solid fa-file-pdf"></i> Download Official Resume (.PDF)
             </a>
         </div>
         
-        <div class="mt-8 border-t border-border pt-8" style="margin-top: 3rem; text-align: center;">
+        <div class="mt-8 border-t border-border pt-8" style="margin-top: 3rem;">
             <h4 class="text-white font-bold mb-3 font-['Playfair_Display'] text-xl">Education &amp; Credentials</h4>
             <p class="text-text-muted mb-2" style="color: var(--text-muted);"><strong>Seton Hall University:</strong> M.A., Diplomacy &amp; Int. Relations; M.A., Corporate Communications</p>
             <p class="text-text-muted mb-3" style="color: var(--text-muted);"><strong>University of Rhode Island:</strong> B.A., Int. Business &amp; Political Science</p>
             <p style="color: var(--gold); font-size: 0.95rem; font-weight: 600;">Certified PMM (PMA) &nbsp;|&nbsp; Cloud AI Pro (Oracle) &nbsp;|&nbsp; Ethics in GenAI (Google)</p>
-        </div>
-    </div>
-</section>
-
-<!-- CONNECT WITH ME / "WHO I AM" SIDEBAR BLOCK -->
-<section id="about" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-    <div class="container" style="max-width: 900px; text-align: center;">
-        <span class="section-label">Executive Profile</span>
-        <h2 class="section-title">Connect With <span>Me.</span></h2>
-        <div class="divider" style="margin: 0 auto 2.5rem;"></div>
-        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">
-            Exploring executive GTM leadership opportunities at Physical AI, industrial autonomy, and edge intelligence companies — Series A to C, with a focus on executing lean, high-velocity launches.
-        </p>
-        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-            <a href="https://www.linkedin.com/in/muhammad-yunas" target="_blank" class="btn-secondary" style="margin-left: 0;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:yunasmuh@gmail.com" class="btn-secondary" style="margin-left: 0;"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a href="Muhammad_Yunas_Resume_2026.pdf" download class="btn-secondary" style="margin-left: 0;"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
         </div>
     </div>
 </section>
@@ -447,30 +452,28 @@
         <span class="section-label">Initiate Contact</span>
         <h2 class="section-title">Ready for a <span>Conversation?</span></h2>
         <div class="divider"></div>
-        <div class="contact-wrapper" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p>I'm available for Senior Director, VP GTM, SVP Revenue, and CRO conversations at high-growth Physical AI, industrial autonomy, and Industrial IoT companies. If you're building the industrial AI infrastructure of the next decade — I want to talk.</p>
+                <div class="social-links">
+                    <a href="mailto:yunasmuh@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammad-yunas" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="Muhammad_Yunas_Resume_2026.pdf" download aria-label="Download Resume"><i class="fa-solid fa-file-pdf"></i></a>
+                </div>
+                <p style="color: var(--gold); font-weight: 600; font-size: 0.95rem;"><i class="fa-solid fa-location-dot"></i> Long Island, New York (Remote / Hybrid / Relocatable)</p>
+            </div>
             <form action="mailto:yunasmuh@gmail.com" method="POST" enctype="text/plain">
                 <input type="text" name="Name" placeholder="Executive Name" required>
                 <input type="email" name="Email" placeholder="Return Email Address" required>
                 <textarea name="Message" placeholder="Details regarding the strategic opportunity..." required></textarea>
-                
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                    <button type="submit" class="btn-primary" style="flex: 1; min-width: 200px; border:none; cursor:pointer; justify-content: center;">Send Message</button>
-                    <a href="mailto:yunasmuh@gmail.com" class="btn-secondary" style="flex: 1; min-width: 200px; justify-content: center; margin-left: 0; text-align: center;">Email Me Directly</a>
-                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border:none; cursor:pointer; justify-content: center;">Send Direct Message →</button>
             </form>
         </div>
     </div>
 </section>
 
-<!-- FOOTER WITH SIGNATURE QUOTE -->
 <footer>
-  <p style="font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--white); margin-bottom: 2rem;">
-    "Listen deeply, clarify relentlessly, execute decisively."[cite: 5]
-  </p>
-
-  <div style="width: 100%; height: 1px; background: var(--border); margin-bottom: 2rem;"></div>
-
-  <p>&copy; <span id="year">2026</span> Muhammad A. Yunas &middot; Head of Product Marketing &amp; GTM Leader</p>
+    <p>&copy; <span id="year">2026</span> <span>Muhammad A. Yunas</span>. All rights reserved. | Physical AI &amp; Industrial GTM Leadership</p>
 </footer>
 
 <script>
